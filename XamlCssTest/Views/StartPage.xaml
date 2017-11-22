@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:css="clr-namespace:XamlCSS.XamarinForms;assembly=XamlCSS.XamarinForms"
+    x:Class="XamlCssTest.Views.StartPage">
+	<ContentPage.Content>
+        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="There's a box view below me!" Grid.Row="0" />
+            <BoxView HeightRequest="100" WidthRequest="100" Grid.Row="1" />
+            <BoxView css:Css.Class="box" HeightRequest="100" WidthRequest="100" Grid.Row="2" />
+            <Button Text="Button" Clicked="Handle_Clicked" Grid.Row="3" />
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>
