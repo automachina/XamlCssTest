@@ -4,22 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:css="clr-namespace:XamlCSS.XamarinForms;assembly=XamlCSS.XamarinForms" 
     x:Class="XamlCssTest.App">
-    <!--<Application.MainPage>
+    <Application.Resources>
+        <ResourceDictionary>
 
-        <ContentPage>
-            <ContentPage.Content>
-                <Grid HorizontalOptions="Center" VerticalOptions="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Label Text="There's a box view below me!" Grid.Row="0" />
-                    <BoxView HeightRequest="100" WidthRequest="100" Grid.Row="1" />
-                    <Button Text="Button" Clicked="Handle_Clicked" Grid.Row="2" />
-                </Grid>
-            </ContentPage.Content>
-        </ContentPage>
-
-    </Application.MainPage>-->
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Green" />
+                <Setter Property="FontSize" Value="25" />
+            </Style>
+            
+            <Style x:Key="DescriptionLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="25" />
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

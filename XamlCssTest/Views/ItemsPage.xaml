@@ -25,8 +25,8 @@
 					<DataTemplate>
 						<ViewCell css:VisualTreeCell.Include="true" >
 							<StackLayout Padding="10">
-								<Label Text="{Binding Text}" LineBreakMode="NoWrap" css:Css.Class="title" />
-								<Label Text="{Binding Description}" LineBreakMode="NoWrap" />
+								<Label Text="{Binding Text}" LineBreakMode="NoWrap" css:Css.Class="title" Style="{StaticResource TitleLabel}" />
+								<Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{StaticResource DescriptionLabel}" />
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

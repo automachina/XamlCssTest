@@ -21,9 +21,12 @@ namespace XamlCssTest
         {
             InitializeComponent();
             Css.Initialize(this);
+
             var styleSheet = XamlCSS.CssParsing.CssParser.Parse(CurrentStyle);
-            Css.SetStyleSheet(this, styleSheet);
-            MainPage = new NavigationPage(new StartPage { PageNumber = 1 });
+            //Css.SetStyleSheet(this, styleSheet);
+
+            //MainPage = new NavigationPage(new StartPage { PageNumber = 1 });
+            MainPage = new MainPage();
         }
 
         public static string CurrentStyle = @"
