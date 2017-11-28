@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
 
 namespace XamlCssTest
 {
@@ -25,6 +27,9 @@ namespace XamlCssTest
                 Items.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });
+
+            // Testing AOT issue related to assembly Microsoft.Net.Http.Headers.dll
+            var url = Base64UrlTextEncoder.Encode(Convert.FromBase64String("https://nwcu.com"));
         }
 
         async Task ExecuteLoadItemsCommand()
