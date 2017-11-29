@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:css="clr-namespace:XamlCSS.XamarinForms;assembly=XamlCSS.XamarinForms"
+    xmlns:local="clr-namespace:XamlCssTest"
     x:Class="XamlCssTest.ItemsPage" 
     Title="{Binding Title}" 
     x:Name="BrowseItemsPage">
@@ -23,10 +24,10 @@
                 ItemSelected="OnItemSelected">
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<ViewCell css:VisualTreeCell.Include="true" >
+						<ViewCell local:ItemCatcher.Include="True">
 							<StackLayout Padding="10">
-								<Label Text="{Binding Text}" LineBreakMode="NoWrap" css:Css.Class="title" Style="{StaticResource TitleLabel}" />
-								<Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{StaticResource DescriptionLabel}" />
+								<Label Text="{Binding Text}" LineBreakMode="NoWrap"/>
+								<Label Text="{Binding Description}" LineBreakMode="NoWrap" />
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>
