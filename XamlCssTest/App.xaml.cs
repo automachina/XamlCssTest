@@ -20,9 +20,9 @@ namespace XamlCssTest
         public App()
         {
             InitializeComponent();
-            Css.Initialize(this);
+            //Css.Initialize(this);
 
-            var styleSheet = XamlCSS.CssParsing.CssParser.Parse(CurrentStyle);
+            //var styleSheet = XamlCSS.CssParsing.CssParser.Parse(CurrentStyle);
             //Css.SetStyleSheet(this, styleSheet);
 
             //MainPage = new NavigationPage(new StartPage { PageNumber = 1 });

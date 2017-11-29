@@ -23,7 +23,7 @@
 		</StackLayout>
 		<ScrollView Grid.Row="1">
 			<StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-				<Label css:Css.Class="title" Text="AppName 1.0" />
+				<Label Text="AppName 1.0" />
 				<Label>
 					<Label.FormattedText>
 						<FormattedString>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -41,6 +42,52 @@ namespace XamlCssTest
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+            
+        }
+    }
+    
+    public static class ItemCatcher
+    {
+        public static readonly BindableProperty IncludeProperty =
+            BindableProperty.CreateAttached(
+                "Include",
+                typeof(bool),
+                typeof(VisualTreeCell),
+                false,
+                propertyChanged: OnIncludeChanged);
+
+        public static bool GetInclude(BindableObject view)
+        {
+            return (bool)view.GetValue(IncludeProperty);
+        }
+
+        public static void SetInclude(BindableObject view, bool value)
+        {
+            view.SetValue(IncludeProperty, value);
+        }
+
+        static void OnIncludeChanged(BindableObject view, object oldValue, object newValue)
+        {
+            var entry = view as ViewCell;
+            if (entry == null)
+            {
+                return;
+            }
+
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                var label = (entry.View as StackLayout).Children.First() as Label;
+                if (label.Style == null)
+                {
+                    label.Style = App.Current.Resources["TitleLabel"] as Style;
+                }
+                else
+                {
+                    label.Style = null;
+                }
+
+                return true;
+            });
         }
     }
 }
